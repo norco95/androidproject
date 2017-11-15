@@ -5,5 +5,5 @@ package com.example.orbannorbert.caradvertiser;
  */
 
 public class Vehicle {
-    
+    int a;
 }
