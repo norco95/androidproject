@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "499455871849",
+    "firebase_url": "https://caradvertiser-9bbb0.firebaseio.com",
+    "project_id": "caradvertiser-9bbb0",
+    "storage_bucket": "caradvertiser-9bbb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499455871849:android:65609298760a9f1d",
+        "android_client_info": {
+          "package_name": "com.example.orbannorbert.caradvertiser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499455871849-vrvbo42vnvf7u89iiciiv97cf7mkc1j7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orbannorbert.caradvertiser",
+            "certificate_hash": "1f2849cc4f292542749f6e890eaa6e19cc8b22bc"
+          }
+        },
+        {
+          "client_id": "499455871849-bb9t3go2u7081142vghtj6pqh452de5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuIlBk2VkaKDWAXA0AoULOXrR7CyTNao0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499455871849-bb9t3go2u7081142vghtj6pqh452de5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
