@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
 
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("asd","asd");
+                Log.d("as","ad");
             }
 
 
