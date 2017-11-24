@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.orbannorbert.caradvertiser.MainActivity">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="590dp"
+        android:layout_height="60dp">
+
+        <Button
+            android:id="@+id/myAdvertises"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/myAdvertises" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/add"/>
+
+
+        <Button
+            android:id="@+id/advertises"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/advertises" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="@string/profile"/>
+
+        <Button
+            android:id="@+id/login"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="@string/login" />
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="@string/logout"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="600dp"
+        android:layout_height="890dp">
+
+        <fragment
+            android:id="@+id/fragmentplace"
+            android:name="com.example.orbannorbert.caradvertiser.Advertises"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_advertises"></fragment>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+
+
+</LinearLayout>

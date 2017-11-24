@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorbackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="15dp">
+
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.47"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed" />
+        android:id="@+id/img_android"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:contentDescription="@string/todo"
+        android:gravity="center" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:orientation="horizontal"
-        android:visibility="visible"></LinearLayout>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="400dp"
+        android:layout_height="130dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_android"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:textColor="#111111"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:textColor="#111111"
+            android:textStyle="bold" />
+    </android.support.v7.widget.LinearLayoutCompat>
 
 </LinearLayout>
