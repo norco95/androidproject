@@ -6,18 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 
 public class MainActivity extends AppCompatActivity {
+
+
 
 
 
@@ -25,10 +20,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       Button myAdvertises=(Button)findViewById(R.id.myAdvertises);
-       myAdvertises.setVisibility(View.GONE);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
+        Button myAdvertises=(Button)findViewById(R.id.myAdvertises);
+        myAdvertises.setVisibility(View.GONE);
+
 
         //  int image=R.drawable.kepu;
         //  ImageView imgView;
@@ -56,17 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ref.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("asd","asd");
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("asd","cancelled");
-
-            }
-        });
 
 
     }

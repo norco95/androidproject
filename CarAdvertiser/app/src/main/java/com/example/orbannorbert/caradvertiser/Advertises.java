@@ -5,16 +5,23 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 
 public class Advertises extends Fragment {
 
-    private final String android_version_names[] = {
+    /*private final String android_version_names[] = {
             "Donut",
             "Eclair",
             "Froyo",
@@ -39,8 +46,10 @@ public class Advertises extends Fragment {
             "description9 djsakjdhaskjdhkajhdkashdkjsahdk",
             "description10 djsakjdhaskjdhkajhdkashdkjsahdk"
     };
+*/
 
-    View s;
+    private ArrayList<ViewModel> vehicles=new ArrayList<ViewModel>();
+    private  View s;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,8 +84,33 @@ public class Advertises extends Fragment {
             }
         });
 
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+        DatabaseReference veh=ref.child("vehicles");
+        veh.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-        initViews(v);
+
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    ViewModel ve=new ViewModel();
+                    ve.setText(ds.child("title").getValue().toString());
+                    ve.setDescription(ds.child("short_description").getValue().toString());
+                    ve.setImage(ds.child("images").child("1").getValue().toString());
+                    vehicles.add(ve);
+                    initViews(s);
+                }
+
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("asdas","canacelled");
+
+            }
+        });
+
+
         return v;
     }
 
@@ -95,13 +129,18 @@ public class Advertises extends Fragment {
     private ArrayList<ViewModel> prepareData(){
 
         ArrayList<ViewModel> android_version = new ArrayList<>();
-        for(int i=0;i<android_version_names.length;i++){
+        for(ViewModel v : vehicles)
+        {
             ViewModel androidVersion = new ViewModel();
-            androidVersion.setText(android_version_names[i]);
-            androidVersion.setDescription(android_image_urls[i]);
-            androidVersion.setImage("kep.png");
+            androidVersion.setText(v.getText());
+            androidVersion.setDescription(v.getDescription());
+            androidVersion.setImage(v.getImage());
             android_version.add(androidVersion);
         }
+
+
+
+
         return android_version;
     }
 

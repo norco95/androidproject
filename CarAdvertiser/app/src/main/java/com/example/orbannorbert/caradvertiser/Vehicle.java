@@ -1,7 +1,5 @@
 package com.example.orbannorbert.caradvertiser;
 
-import android.widget.ArrayAdapter;
-
 import java.util.ArrayList;
 
 /**
@@ -15,6 +13,7 @@ public class Vehicle {
     private String fuelType;
     private int horsePower;
     private String id;
+    private String shortDescription;
     private ArrayList<String> images;
     private int km;
     private int numberOfDoors;
@@ -26,6 +25,9 @@ public class Vehicle {
     private String type;
     private int year;
 
+    public Vehicle(){
+
+    };
     public Vehicle(VehicleBuilder builder) {
         this.bodyType = builder.bodyType;
         this.description = builder.description;
@@ -43,6 +45,7 @@ public class Vehicle {
         this.title = builder.title;
         this.type = builder.type;
         this.year = builder.year;
+        this.shortDescription = builder.shortDescription;
     }
 
     public String getBodyType() {
@@ -133,6 +136,14 @@ public class Vehicle {
         this.subType = subType;
     }
 
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
     public ArrayList<String> getTags() {
         return tags;
     }
@@ -182,14 +193,16 @@ public class Vehicle {
         private String title;
         private String type;
         private int year;
+        private String shortDescription;
 
-        VehicleBuilder(ArrayList<String> images, double price, String subType, String title, String type){
+        VehicleBuilder(ArrayList<String> images, double price, String subType, String title, String type,String shortDescription){
             this.images = images;
             this.price = price;
             this.subType = subType;
             this.title = title;
             this.type = type;
             this.sold = false;
+            this.shortDescription=shortDescription;
         }
 
         public VehicleBuilder bodyType(String bodyType){

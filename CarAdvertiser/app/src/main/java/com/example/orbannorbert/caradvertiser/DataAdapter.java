@@ -1,5 +1,6 @@
 package com.example.orbannorbert.caradvertiser;
 
+
 /**
  * Created by OrbanNorbert on 2017. 11. 23..
  */
@@ -13,11 +14,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.util.ArrayList;
+
+
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<ViewModel> android;
     private Context context;
+
+    private FirebaseStorage storage = FirebaseStorage.getInstance();
+    private StorageReference storref=storage.getReferenceFromUrl("gs://caradvertiser-9bbb0.appspot.com");
 
     public DataAdapter(Context context,ArrayList<ViewModel> android) {
         this.android = android;
@@ -30,13 +39,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
+
+
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.tv_android.setText(android.get(i).getText());
-        viewHolder.img_android.setImageResource(R.drawable.kepu);
-        viewHolder.description.setText(android.get(i).getDescription());
 
+
+        viewHolder.tv_android.setText(android.get(i).getText());
+       // viewHolder.img_android.setImageResource(R.drawable.kepu);
+        viewHolder.description.setText(android.get(i).getDescription());
     }
 
     @Override
