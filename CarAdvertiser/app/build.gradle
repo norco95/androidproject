@@ -24,6 +24,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:11.0.4'
     implementation 'com.google.firebase:firebase-storage:11.0.4'
     implementation 'com.google.firebase:firebase-auth:11.0.4'
+    implementation 'com.android.support:support-v4:25.4.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -32,11 +33,14 @@ dependencies {
 
 
 
-    compile 'com.github.bumptech.glide:glide:3.8.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:25.3.1'
     //noinspection GradleCompatible
     compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'com.android.support:support-annotations:+'
+//noinspection GradleCompatible
+    compile 'com.android.support:design:23.0.1'
 
 
 }

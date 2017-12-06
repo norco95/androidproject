@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.orbannorbert.caradvertiser.AddAdvertisement">
+
+ <android.support.v7.widget.LinearLayoutCompat
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/colorAccent"
+     android:orientation="vertical">
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:textColor="#FFF"
+         android:textStyle="bold"
+         android:text="image:"/>
+
+<Button
+    android:id="@+id/choseImg"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:text="AddImage"/>
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:text="Price:"
+         android:textColor="#FFF"
+         android:textStyle="bold" />
+
+     <EditText
+         android:id="@+id/price"
+         android:layout_width="450dp"
+         android:layout_height="60dp"
+         android:background="#babfc6"
+         android:inputType="textCapSentences|textAutoCorrect"
+         android:textColor="#111111" />
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:text="Model:"
+         android:textColor="#FFF"
+         android:textStyle="bold" />
+
+     <EditText
+         android:id="@+id/model"
+         android:layout_width="450dp"
+         android:layout_height="60dp"
+         android:background="#babfc6"
+         android:inputType="textCapSentences|textAutoCorrect"
+         android:textColor="#111111" />
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:textColor="#FFF"
+         android:textStyle="bold"
+         android:text="Title:"/>
+
+     <EditText
+         android:id="@+id/atitle"
+         android:layout_width="450dp"
+         android:layout_height="60dp"
+         android:background="#babfc6"
+         android:inputType="textCapSentences|textAutoCorrect"
+         android:textColor="#111111" />
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:textColor="#FFF"
+         android:textStyle="bold"
+         android:text="Type:"/>
+
+     <EditText
+         android:id="@+id/type"
+         android:layout_width="450dp"
+         android:layout_height="60dp"
+         android:background="#babfc6"
+         android:inputType="textCapSentences|textAutoCorrect"
+         android:textColor="#111111" />
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:textColor="#FFF"
+         android:textStyle="bold"
+         android:text="Short Description:"/>
+
+     <EditText
+         android:id="@+id/sdescription"
+         android:layout_width="450dp"
+         android:layout_height="60dp"
+         android:background="#babfc6"
+         android:inputType="textCapSentences|textAutoCorrect"
+         android:textColor="#111111" />
+
+
+
+
+     <Button
+         android:id="@+id/add"
+         android:layout_width="60dp"
+         android:layout_height="60dp"
+         android:text="Add"
+         />
+ </android.support.v7.widget.LinearLayoutCompat>
+
+</FrameLayout>

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Vehicle {
+    //@Serialable
     private String bodyType;
     private String description;
     private double engine;
@@ -25,9 +26,20 @@ public class Vehicle {
     private String type;
     private int year;
 
-    public Vehicle(){
+    public Vehicle()
+    {}
+    public Vehicle(ArrayList<String> images, double v, String s, String toString, String string, String s1){
 
     };
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     public Vehicle(VehicleBuilder builder) {
         this.bodyType = builder.bodyType;
         this.description = builder.description;

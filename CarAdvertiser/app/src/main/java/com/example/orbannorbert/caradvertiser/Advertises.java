@@ -3,7 +3,6 @@ package com.example.orbannorbert.caradvertiser;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,7 +47,7 @@ public class Advertises extends Fragment {
     };
 */
 
-    private ArrayList<ViewModel> vehicles=new ArrayList<ViewModel>();
+    private ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
     private  View s;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,7 +58,9 @@ public class Advertises extends Fragment {
 
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_advertises, container, false);
+
         s=v;
+        /*
         RecyclerView mRecyclerView= (RecyclerView)v.findViewById(R.id.card_recycler_view);
 
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener()
@@ -83,7 +84,7 @@ public class Advertises extends Fragment {
 
             }
         });
-
+*/
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
         DatabaseReference veh=ref.child("vehicles");
@@ -94,10 +95,8 @@ public class Advertises extends Fragment {
 
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     ViewModel ve=new ViewModel();
-                    ve.setText(ds.child("title").getValue().toString());
-                    ve.setDescription(ds.child("short_description").getValue().toString());
-                    ve.setImage(ds.child("images").child("1").getValue().toString());
-                    vehicles.add(ve);
+                    Vehicle v=ds.getValue(Vehicle.class);
+                    vehicles.add(v);
                     initViews(s);
                 }
 
@@ -129,12 +128,14 @@ public class Advertises extends Fragment {
     private ArrayList<ViewModel> prepareData(){
 
         ArrayList<ViewModel> android_version = new ArrayList<>();
-        for(ViewModel v : vehicles)
+        for(Vehicle v : vehicles)
         {
             ViewModel androidVersion = new ViewModel();
-            androidVersion.setText(v.getText());
-            androidVersion.setDescription(v.getDescription());
-            androidVersion.setImage(v.getImage());
+            androidVersion.setText(v.getTitle());
+            androidVersion.setDescription(v.getShortDescription());
+            ArrayList<String> images=new ArrayList<>();
+            images=v.getImages();
+            androidVersion.setImage(images.get(0));
             android_version.add(androidVersion);
         }
 

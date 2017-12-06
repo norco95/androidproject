@@ -42,13 +42,19 @@ public class MainActivity extends AppCompatActivity {
         advertisesButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-               changeFragment(v);
+                changeFragment(v);
 
             }
         });
 
+        final Button addadvertise=(Button)findViewById(R.id.add);
+        addadvertise.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                changeFragment(v);
 
+            }
+        });
 
 
 
@@ -82,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
 
             ft.commit();
         }
+        if(view==findViewById(R.id.add))
+        {
+            fragment = new AddAdvertisement();
+            FragmentManager fm=getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+
+            ft.replace(R.id.fragmentplace,fragment);
+
+            ft.commit();
+        }
+
+
 
 
     }

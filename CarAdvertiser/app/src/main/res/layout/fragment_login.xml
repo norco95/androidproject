@@ -2,18 +2,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.orbannorbert.caradvertiser.Login">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <android.support.v7.widget.LinearLayoutCompat
+    tools:context="com.example.orbannorbert.caradvertiser.Login"
+    android:background="@color/colorAccent">
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorbackground">
-        <TextView
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
-    </android.support.v7.widget.LinearLayoutCompat>
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=" hello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js skhello world jheds sdjhs jds sjbs skjs ksjs kksjs ksj sdd dskd js sk"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                /// Add your other code here
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </FrameLayout>

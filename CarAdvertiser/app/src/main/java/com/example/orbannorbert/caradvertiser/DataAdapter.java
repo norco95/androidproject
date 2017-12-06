@@ -5,15 +5,16 @@ package com.example.orbannorbert.caradvertiser;
  * Created by OrbanNorbert on 2017. 11. 23..
  */
 
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -46,7 +47,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
 
 
+       // String uri=storref.child("images/kepu.jpg").getDownloadUrl();
+       //Log.d("url:",uri);
+        //android.get(i).getImage();
+      // StorageReference sr= storref.child("images/"+ android.get(i).getImage());
+
+        Log.d("kep",android.get(i).getImage());
         viewHolder.tv_android.setText(android.get(i).getText());
+        Glide.with(context)
+                .load(android.get(i).getImage())
+                .into(viewHolder.img_android);
        // viewHolder.img_android.setImageResource(R.drawable.kepu);
         viewHolder.description.setText(android.get(i).getDescription());
     }
