@@ -1,0 +1,74 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.orbannorbert.caradvertiser.Advertise">
+
+
+<android.support.v7.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Model:"
+        android:id="@+id/model"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Type:"
+        android:id="@+id/type"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Year:"
+        android:id="@+id/year"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Km:"
+        android:id="@+id/km"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Fuel Type:"
+        android:id="@+id/fueltype"/>
+
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Engine:"
+        android:id="@+id/engine"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Horse Power:"
+        android:id="@+id/horsepower"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Body Type:"
+        android:id="@+id/bodytype"/>
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:text="Number Of Dors:"
+        android:id="@+id/numberofdors"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Price"
+        android:id="@+id/price"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:text="Descripton"
+        android:id="@+id/description"/>
+
+</android.support.v7.widget.LinearLayoutCompat>
+
+
+</FrameLayout>

@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.orbannorbert.caradvertiser.Advertises">
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorbackground"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical">
 
 
@@ -39,13 +39,15 @@
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="600dp"
-                android:layout_height="830dp">
+                android:layout_height="830dp"
+                android:background="@color/colorPrimaryDark">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/card_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scrollbars="vertical" >
+                    android:scrollbars="vertical"
+                    android:background="@color/colorPrimaryDark">
                 </android.support.v7.widget.RecyclerView>
 
             </android.support.v7.widget.LinearLayoutCompat>

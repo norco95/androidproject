@@ -20,9 +20,14 @@ import java.util.ArrayList;
 
 
 
-public class Advertises extends Fragment implements ItemClickListener{
+public class MyAdvertises extends Fragment implements ItemClickListener{
 
 
+    String loginid;
+    public void setLoginId(String id)
+    {
+        loginid=id;
+    }
     DataAdapter adapter;
     private ArrayList<Vehicle> vehicles=new ArrayList<Vehicle>();
     private  View s;
@@ -34,62 +39,46 @@ public class Advertises extends Fragment implements ItemClickListener{
 
 
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_advertises, container, false);
+        View v= inflater.inflate(R.layout.fragment_my_advertises, container, false);
 
         s=v;
-        /*
-        RecyclerView mRecyclerView= (RecyclerView)v.findViewById(R.id.card_recycler_view);
 
-        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener()
-        {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy)
-            {
-                if(dy > 0) //check for scroll down
-                {
-                    LinearLayoutCompat l=(LinearLayoutCompat) s.findViewById(R.id.searchLayout);
-
-                    l.setVisibility(s.INVISIBLE);
-                    l.setVisibility(s.GONE);
-
-                }
-                else
-                {
-                    LinearLayoutCompat l=(LinearLayoutCompat) s.findViewById(R.id.searchLayout);
-                    l.setVisibility(s.VISIBLE);
-                }
-
-            }
-        });
-*/
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
-        DatabaseReference veh=ref.child("vehicles");
-        veh.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        final DatabaseReference veh=ref.child("vehicles");
+
+     //   if(loginid!=null) {
+            veh.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                    Vehicle v=ds.getValue(Vehicle.class);
-                    if(!v.isSold())
-                    {
-                        vehicles.add(v);
+                        Vehicle v = ds.getValue(Vehicle.class);
+                     //   if(v.getId()==loginid)
+                      //  {
+                        if(!v.isSold())
+                        {
+                            vehicles.add(v);
+                        }
+
+                      //  }
+
                     }
+                    initViews(s);
+
 
                 }
 
-                initViews(s);
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.d("asdas", "canacelled");
 
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("asdas","canacelled");
+                }
+            });
 
-            }
-        });
-
+       // }
 
         return v;
     }
@@ -97,20 +86,21 @@ public class Advertises extends Fragment implements ItemClickListener{
 
     private void initViews(View v){
 
+
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         if(getActivity()!=null) {
             RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity().getApplicationContext(), 1);
             recyclerView.setLayoutManager(layoutManager);
-
             ArrayList<ViewModel> androidVersions = prepareData();
             adapter = new DataAdapter(getActivity().getApplicationContext(), androidVersions);
             recyclerView.setAdapter(adapter);
             adapter.setClickListener(this);
         }
+
     }
 
-   Communicator mCallback;
+    Communicator mCallback;
 
 
 
@@ -137,7 +127,7 @@ public class Advertises extends Fragment implements ItemClickListener{
     @Override
     public void onClick(View view,int position)
     {
-        mCallback.respond(vehicles.get(position).getId());
+        mCallback.respond1(vehicles.get(position).getId());
     }
 
 

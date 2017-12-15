@@ -10,18 +10,77 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Communicator{
+
+    private FragmentManager fm=getSupportFragmentManager();
+    private String loginId;
+    Button addadvertise;
+    Button advertisesButton;
+    Button loginButton;
+    Button myAdvertises;
+    Button logout;
+    Button profile;
+
+    @Override
+    public void respond(String text) {
 
 
+        FragmentTransaction ft=fm.beginTransaction();
+        Advertise add=new Advertise();
+        add.updateText(text);
+        ft.replace(R.id.fragmentplace,add);
+        ft.commit();
 
 
+    }
+
+    @Override
+    public void respond1(String text) {
+
+
+        FragmentTransaction ft=fm.beginTransaction();
+        AddAdvertisement add=new AddAdvertisement();
+        add.updateText(text);
+        ft.replace(R.id.fragmentplace,add);
+        ft.commit();
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button myAdvertises=(Button)findViewById(R.id.myAdvertises);
-        myAdvertises.setVisibility(View.GONE);
+
+        myAdvertises=(Button)findViewById(R.id.myAdvertises);
+        myAdvertises.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                changeFragment(v);
+
+            }
+        });
+
+        myAdvertises.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                changeFragment(v);
+
+            }
+        });
+
+        profile=(Button)findViewById(R.id.profile);
+
+        logout=(Button)findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                loginId=null;
+                setMenu();
+
+            }
+        });
 
 
         //  int image=R.drawable.kepu;
@@ -29,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         //  imgView=(ImageView)findViewById(R.id.imageView2);
         //  imgView.setImageResource(image);
 
-        final Button loginButton = (Button) findViewById(R.id.login);
+        loginButton = (Button) findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -38,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button advertisesButton = (Button) findViewById(R.id.advertises);
+        advertisesButton = (Button) findViewById(R.id.advertises);
         advertisesButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -47,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button addadvertise=(Button)findViewById(R.id.add);
+        addadvertise=(Button)findViewById(R.id.add);
         addadvertise.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -55,17 +114,34 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        setMenu();
 
 
     }
 
-
-
-
+    private void setMenu()
+    {
+        if(loginId!=null)
+        {
+            loginButton.setVisibility(View.GONE);
+            addadvertise.setVisibility(View.VISIBLE);
+            myAdvertises.setVisibility(View.VISIBLE);
+            profile.setVisibility(View.VISIBLE);
+            logout.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            loginButton.setVisibility(View.VISIBLE);
+            myAdvertises.setVisibility(View.GONE);
+            addadvertise.setVisibility(View.GONE);
+            profile.setVisibility(View.GONE);
+            logout.setVisibility(View.GONE);
+        }
+    }
 
     public void changeFragment(View view)
     {
+
         Fragment fragment;
 
         View f= findViewById(R.id.fragmentplace);
@@ -73,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
         if(view==findViewById(R.id.login))
         {
             fragment = new Login();
+            loginId="a";
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,fragment);
@@ -83,9 +160,7 @@ public class MainActivity extends AppCompatActivity {
             fragment = new Advertises();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
-
             ft.replace(R.id.fragmentplace,fragment);
-
             ft.commit();
         }
         if(view==findViewById(R.id.add))
@@ -93,14 +168,21 @@ public class MainActivity extends AppCompatActivity {
             fragment = new AddAdvertisement();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
-
             ft.replace(R.id.fragmentplace,fragment);
-
             ft.commit();
         }
 
+        if(view==findViewById(R.id.myAdvertises))
+        {
+            MyAdvertises my = new MyAdvertises();
+            my.setLoginId(loginId);
+            FragmentManager fm=getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+            ft.replace(R.id.fragmentplace,my);
+            ft.commit();
+        }
 
-
+        setMenu();
 
     }
 

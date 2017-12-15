@@ -25,7 +25,8 @@ import java.util.ArrayList;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<ViewModel> android;
     private Context context;
-
+    private ViewHolder mviewHolder;
+    private ItemClickListener clickListener;
     private FirebaseStorage storage = FirebaseStorage.getInstance();
     private StorageReference storref=storage.getReferenceFromUrl("gs://caradvertiser-9bbb0.appspot.com");
 
@@ -37,10 +38,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.advertisement, viewGroup, false);
-        return new ViewHolder(view);
+        mviewHolder= new ViewHolder(view);
+        return mviewHolder;
     }
 
 
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
 
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
@@ -66,7 +71,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return android.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
+
         private TextView tv_android;
         private ImageView img_android;
         private TextView description;
@@ -75,6 +84,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             description=(TextView)view.findViewById(R.id.tv_description);
             tv_android = (TextView)view.findViewById(R.id.tv_android);
             img_android = (ImageView) view.findViewById(R.id.img_android);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null)
+                clickListener.onClick(view, getAdapterPosition());
         }
     }
 
