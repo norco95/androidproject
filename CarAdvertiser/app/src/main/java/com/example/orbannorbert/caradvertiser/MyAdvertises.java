@@ -23,7 +23,14 @@ import java.util.ArrayList;
 public class MyAdvertises extends Fragment implements ItemClickListener{
 
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref = database.getReference();
+    DatabaseReference veh=ref.child("vehicles");
+    DatabaseReference user=ref.child("users");
+    User owner=new User();
     String loginid;
+    String id;
+    Vehicle v;
     public void setLoginId(String id)
     {
         loginid=id;
@@ -43,42 +50,41 @@ public class MyAdvertises extends Fragment implements ItemClickListener{
 
         s=v;
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
-        final DatabaseReference veh=ref.child("vehicles");
 
-     //   if(loginid!=null) {
+
+        id=((MainActivity)getActivity()).getLoginId();
+
+
+
             veh.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    for(DataSnapshot ds: dataSnapshot.getChildren()){
 
-                        Vehicle v = ds.getValue(Vehicle.class);
-                     //   if(v.getId()==loginid)
-                      //  {
-                        if(!v.isSold())
-                        {
-                            vehicles.add(v);
+                        Vehicle v=ds.getValue(Vehicle.class);
+
+                        if(v.getOwnerId()!=null) {
+                            if (v.getOwnerId().equals(id)) {
+                                if (!v.isSold()) {
+                                    vehicles.add(v);
+                                }
+                            }
                         }
-
-                      //  }
-
                     }
+
                     initViews(s);
 
-
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Log.d("asdas", "canacelled");
+                    Log.d("asdas","canacelled");
 
                 }
             });
 
-       // }
+
 
         return v;
     }
@@ -90,14 +96,15 @@ public class MyAdvertises extends Fragment implements ItemClickListener{
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         if(getActivity()!=null) {
-            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity().getApplicationContext(), 1);
-            recyclerView.setLayoutManager(layoutManager);
-            ArrayList<ViewModel> androidVersions = prepareData();
-            adapter = new DataAdapter(getActivity().getApplicationContext(), androidVersions);
-            recyclerView.setAdapter(adapter);
-            adapter.setClickListener(this);
+            if (getActivity().getApplicationContext() != null) {
+                RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity().getApplicationContext(), 1);
+                recyclerView.setLayoutManager(layoutManager);
+                ArrayList<ViewModel> androidVersions = prepareData();
+                adapter = new DataAdapter(getActivity().getApplicationContext(), androidVersions);
+                recyclerView.setAdapter(adapter);
+                adapter.setClickListener(this);
+            }
         }
-
     }
 
     Communicator mCallback;

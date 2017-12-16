@@ -153,7 +153,10 @@ public class Advertises extends Fragment implements ItemClickListener{
             androidVersion.setDescription(v.getShortDescription());
             ArrayList<String> images=new ArrayList<>();
             images=v.getImages();
-            androidVersion.setImage(images.get(0));
+            if (images!=null)
+            {
+                androidVersion.setImage(images.get(0));
+            }
             android_version.add(androidVersion);
         }
 

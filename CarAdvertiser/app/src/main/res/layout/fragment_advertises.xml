@@ -4,13 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.orbannorbert.caradvertiser.Advertises">
+    tools:context="com.example.orbannorbert.caradvertiser.Advertises"
+    android:clickable="true">
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:clickable="true"
+        >
 
 
 
@@ -20,19 +23,7 @@
                 android:layout_height="60dp">
 
 
-                <EditText
-                    android:id="@+id/message"
-                    android:layout_width="450dp"
-                    android:layout_height="60dp"
-                    android:background="#babfc6"
-                    android:inputType="textCapSentences|textAutoCorrect"
-                    android:textColor="#111111" />
 
-                <Button
-                    style="@style/AlertDialog.AppCompat"
-                    android:layout_width="100dp"
-                    android:layout_height="60dp"
-                    android:text="@string/search" />
             </android.support.v7.widget.LinearLayoutCompat>
 
 

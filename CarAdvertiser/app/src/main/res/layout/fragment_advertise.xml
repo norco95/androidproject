@@ -10,6 +10,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:clickable="true"
+    android:background="@color/colorPrimaryDark"
    >
     <TextView
         android:layout_height="30dp"
@@ -63,10 +65,30 @@
         android:text="Price"
         android:id="@+id/price"/>
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:text="Descripton"
         android:id="@+id/description"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Name:"
+        android:id="@+id/name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Phone Number:"
+        android:id="@+id/phonenumber"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Email:"
+        android:id="@+id/email"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </android.support.v7.widget.LinearLayoutCompat>
 

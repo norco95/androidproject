@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class User {
-    private String authentificationId;
+    private String password;
     private boolean denied;
     private String email;
     private String firstName;
@@ -17,8 +17,86 @@ public class User {
     private String profileImage;
     private ArrayList<String> vehicleIds;
 
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isDenied() {
+        return denied;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public ArrayList<String> getVehicleIds() {
+        return vehicleIds;
+    }
+
+
+
+    public void setDenied(boolean denied) {
+        this.denied = denied;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
+
+    public void setVehicleIds(ArrayList<String> vehicleIds) {
+        this.vehicleIds = vehicleIds;
+    }
+
+    public User()
+    {
+
+    }
     public User(UserBuilder builder){
-        this.authentificationId = builder.authentificationId;
         this.denied = builder.denied;
         this.email = builder.email;
         this.firstName = builder.firstName;

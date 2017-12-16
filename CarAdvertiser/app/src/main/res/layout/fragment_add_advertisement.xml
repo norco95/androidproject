@@ -5,11 +5,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.orbannorbert.caradvertiser.AddAdvertisement"
     android:fitsSystemWindows="true"
+
     >
+
+     <android.support.v7.widget.LinearLayoutCompat
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical"
+         android:background="@color/colorPrimaryDark"
+         android:clickable="true">
+          <android.support.v7.widget.RecyclerView
+              android:id="@+id/recycler_view"
+              android:scrollbars="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="200dp"/>
+
+
 
      <ScrollView
          android:layout_width="fill_parent"
          android:layout_height="wrap_content">
+
+
           <android.support.v7.widget.LinearLayoutCompat
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -18,12 +35,7 @@
               android:fitsSystemWindows="true"
               android:orientation="vertical">
 
-               <TextView
-                   android:layout_width="match_parent"
-                   android:layout_height="30dp"
-                   android:text="image:"
-                   android:textColor="#FFF"
-                   android:textStyle="bold" />
+
 
                <Button
                    android:id="@+id/choseImg"
@@ -213,7 +225,7 @@
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="30dp"
-                   android:text="Description:"
+                   android:text="Desccription:"
                    android:textColor="#FFF"
                    android:textStyle="bold" />
 
@@ -245,5 +257,5 @@
                    android:text="Delete" />
           </android.support.v7.widget.LinearLayoutCompat>
      </ScrollView>
-
+     </android.support.v7.widget.LinearLayoutCompat>
 </FrameLayout>

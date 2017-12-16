@@ -25,6 +25,15 @@ public class Vehicle {
     private String title;
     private String type;
     private int year;
+    private String ownerId;
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
 
     public Vehicle()
     {}
@@ -195,17 +204,21 @@ public class Vehicle {
         private String fuelType;
         private int horsePower;
         private String id;
-        private ArrayList<String> images;
+        private final ArrayList<String> images;
         private int km;
         private int numberOfDoors;
-        private double price;
-        private boolean sold;
-        private String subType;
+        private final double price;
+        private final boolean sold;
+        private final String subType;
         private ArrayList<String> tags;
-        private String title;
-        private String type;
+        private final String title;
+        private final String type;
         private int year;
-        private String shortDescription;
+        private final String shortDescription;
+
+        public Vehicle build() {
+            return new Vehicle(this);
+        }
 
         VehicleBuilder(ArrayList<String> images, double price, String subType, String title, String type,String shortDescription){
             this.images = images;

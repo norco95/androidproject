@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements Communicator{
     Button myAdvertises;
     Button logout;
     Button profile;
+    Button register;
 
     @Override
     public void respond(String text) {
@@ -32,6 +33,17 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         ft.commit();
 
 
+    }
+
+    @Override
+    public void respond2(String text)
+    {
+        loginId=text;
+        setMenu();
+    }
+
+    public String getLoginId(){
+        return loginId;
     }
 
     @Override
@@ -70,6 +82,14 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         });
 
         profile=(Button)findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                    changeFragment(v);
+
+            }
+        });
 
         logout=(Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +134,14 @@ public class MainActivity extends AppCompatActivity implements Communicator{
 
             }
         });
+        register=(Button)findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                changeFragment(v);
+
+            }
+        });
         setMenu();
 
 
@@ -128,9 +156,11 @@ public class MainActivity extends AppCompatActivity implements Communicator{
             myAdvertises.setVisibility(View.VISIBLE);
             profile.setVisibility(View.VISIBLE);
             logout.setVisibility(View.VISIBLE);
+            register.setVisibility(View.GONE);
         }
         else
         {
+            register.setVisibility(View.VISIBLE);
             loginButton.setVisibility(View.VISIBLE);
             myAdvertises.setVisibility(View.GONE);
             addadvertise.setVisibility(View.GONE);
@@ -149,7 +179,6 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         if(view==findViewById(R.id.login))
         {
             fragment = new Login();
-            loginId="a";
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,fragment);
@@ -176,6 +205,22 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         {
             MyAdvertises my = new MyAdvertises();
             my.setLoginId(loginId);
+            FragmentManager fm=getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+            ft.replace(R.id.fragmentplace,my);
+            ft.commit();
+        }
+        if(view==findViewById(R.id.register))
+        {
+            Register my = new Register();
+            FragmentManager fm=getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+            ft.replace(R.id.fragmentplace,my);
+            ft.commit();
+        }
+        if(view==findViewById(R.id.profile))
+        {
+            Profile my = new Profile();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,my);

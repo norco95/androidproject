@@ -7,7 +7,6 @@ package com.example.orbannorbert.caradvertiser;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -27,8 +24,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private Context context;
     private ViewHolder mviewHolder;
     private ItemClickListener clickListener;
-    private FirebaseStorage storage = FirebaseStorage.getInstance();
-    private StorageReference storref=storage.getReferenceFromUrl("gs://caradvertiser-9bbb0.appspot.com");
+
 
     public DataAdapter(Context context,ArrayList<ViewModel> android) {
         this.android = android;
@@ -57,7 +53,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         //android.get(i).getImage();
       // StorageReference sr= storref.child("images/"+ android.get(i).getImage());
 
-        Log.d("kep",android.get(i).getImage());
+
         viewHolder.tv_android.setText(android.get(i).getText());
         Glide.with(context)
                 .load(android.get(i).getImage())
