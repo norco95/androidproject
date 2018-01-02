@@ -57,9 +57,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         viewHolder.tv_android.setText(android.get(i).getText());
         Glide.with(context)
                 .load(android.get(i).getImage())
+                .override(800, 800)
                 .into(viewHolder.img_android);
        // viewHolder.img_android.setImageResource(R.drawable.kepu);
         viewHolder.description.setText(android.get(i).getDescription());
+        viewHolder.price.setText(Double.toString(android.get(i).getPrice())+" EURO");
     }
 
     @Override
@@ -75,11 +77,13 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         private TextView tv_android;
         private ImageView img_android;
         private TextView description;
+        private TextView price;
         public ViewHolder(View view) {
             super(view);
             description=(TextView)view.findViewById(R.id.tv_description);
             tv_android = (TextView)view.findViewById(R.id.tv_android);
             img_android = (ImageView) view.findViewById(R.id.img_android);
+            price=(TextView) view.findViewById(R.id.price);
             view.setOnClickListener(this);
         }
 

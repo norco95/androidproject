@@ -151,11 +151,9 @@ public class MyAdvertises extends Fragment implements ItemClickListener{
             ArrayList<String> images=new ArrayList<>();
             images=v.getImages();
             androidVersion.setImage(images.get(0));
+            androidVersion.setPrice(v.getPrice());
             android_version.add(androidVersion);
         }
-
-
-
 
         return android_version;
     }

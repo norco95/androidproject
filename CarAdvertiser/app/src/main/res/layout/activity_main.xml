@@ -10,7 +10,7 @@
 
 
     <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="590dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp">
 
         <Button
@@ -57,15 +57,17 @@
             android:id="@+id/register"/>
     </android.support.v7.widget.LinearLayoutCompat>
     <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="600dp"
-        android:layout_height="890dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <fragment
+        <FrameLayout
             android:id="@+id/fragmentplace"
             android:name="com.example.orbannorbert.caradvertiser.Advertises"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_advertises"></fragment>
+            tools:layout="@layout/fragment_advertises">
+        </FrameLayout>
+
 
     </android.support.v7.widget.LinearLayoutCompat>
 

@@ -10,12 +10,13 @@ public class ViewModel {
     private String text;
     private String image;
     private String description;
-
+    private double price;
     public ViewModel(){};
-    public ViewModel(long id, String text, String image) {
+    public ViewModel(long id, String text, String image,double price) {
         this.id = id;
         this.text = text;
         this.image = image;
+        this.price=price;
     }
 
     public String getDescription() {
@@ -48,5 +49,13 @@ public class ViewModel {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

@@ -16,23 +16,6 @@
         >
 
 
-
-            <android.support.v7.widget.LinearLayoutCompat
-                android:id="@+id/searchLayout"
-                android:layout_width="590dp"
-                android:layout_height="60dp">
-
-
-
-            </android.support.v7.widget.LinearLayoutCompat>
-
-
-
-            <android.support.v7.widget.LinearLayoutCompat
-                android:layout_width="600dp"
-                android:layout_height="830dp"
-                android:background="@color/colorPrimaryDark">
-
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/card_recycler_view"
                     android:layout_width="match_parent"
@@ -43,6 +26,6 @@
 
             </android.support.v7.widget.LinearLayoutCompat>
 
-    </android.support.v7.widget.LinearLayoutCompat>
+
 
 </FrameLayout>

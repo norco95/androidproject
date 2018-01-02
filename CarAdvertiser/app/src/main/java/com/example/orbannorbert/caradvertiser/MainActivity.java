@@ -64,6 +64,12 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Advertises fragment = new Advertises();
+        FragmentManager fm=getSupportFragmentManager();
+        FragmentTransaction ft=fm.beginTransaction();
+        ft.replace(R.id.fragmentplace,fragment);
+        ft.commit();
+
         myAdvertises=(Button)findViewById(R.id.myAdvertises);
         myAdvertises.setOnClickListener(new View.OnClickListener() {
 

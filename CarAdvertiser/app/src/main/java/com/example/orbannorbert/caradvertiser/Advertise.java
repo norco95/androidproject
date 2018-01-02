@@ -76,12 +76,12 @@ public class Advertise extends Fragment {
                     Vehicle v=ds.getValue(Vehicle.class);
                     if(v.getId()==Id)
                     {
-                        price.setText("Price: "+Double.toString(v.getPrice()));
+                        price.setText("Price: "+Double.toString(v.getPrice())+" Euro");
                         description.setText("Description: "+v.getDescription());
                         model.setText("Model: "+v.getType());
                         type.setText("Type: "+v.getSubType());
                         km.setText("Km: "+Integer.toString(v.getKm()));
-                        fueltype.setText("Price: "+v.getFuelType());
+                        fueltype.setText("Fuel Type: "+v.getFuelType());
                         horsepower.setText("Horsepower: "+Integer.toString(v.getHorsePower()));
                         numberofdors.setText("Number Of Dors : "+Integer.toString(v.getNumberOfDoors()));
                         year.setText("Year : "+Integer.toString(v.getYear()));
@@ -129,7 +129,7 @@ public class Advertise extends Fragment {
    {
        RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.recycler_view);
        recyclerView.setHasFixedSize(true);
-       RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+       RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
        recyclerView.setLayoutManager(layoutManager);
 
        ArrayList imgs = prepareData();

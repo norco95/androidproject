@@ -151,6 +151,7 @@ public class Advertises extends Fragment implements ItemClickListener{
             ViewModel androidVersion = new ViewModel();
             androidVersion.setText(v.getTitle());
             androidVersion.setDescription(v.getShortDescription());
+            androidVersion.setPrice(v.getPrice());
             ArrayList<String> images=new ArrayList<>();
             images=v.getImages();
             if (images!=null)

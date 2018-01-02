@@ -250,7 +250,12 @@ public class AddAdvertisement extends Fragment implements ItemClickListener{
 
                 }
 
-                Toast.makeText(getActivity(), "Upload successful", Toast.LENGTH_SHORT).show();
+                if(filePatchs.size()==0)
+                {
+                    editDatabase();
+                }
+
+
 
             }
         });

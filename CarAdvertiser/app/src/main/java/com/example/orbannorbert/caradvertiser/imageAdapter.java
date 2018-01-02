@@ -42,6 +42,7 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ViewHolder> 
        // Log.d("imgs:",images.get(i).getName());
         Glide.with(context)
                 .load(images.get(i).getName())
+                .override(600, 200)
                 .into(viewHolder.img);
 
     }
