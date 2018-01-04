@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <dimen name="advertisment_fragment_scrollview_h">830dp</dimen>
-
 </resources>

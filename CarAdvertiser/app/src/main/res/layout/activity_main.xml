@@ -6,13 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1">
-
-
-
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="60dp">
-
         <Button
             android:id="@+id/myAdvertises"
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -59,7 +55,6 @@
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <FrameLayout
             android:id="@+id/fragmentplace"
             android:name="com.example.orbannorbert.caradvertiser.Advertises"
@@ -67,12 +62,5 @@
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_advertises">
         </FrameLayout>
-
-
     </android.support.v7.widget.LinearLayoutCompat>
-
-
-
-
-
 </LinearLayout>

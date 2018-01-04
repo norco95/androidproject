@@ -3,141 +3,118 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.orbannorbert.caradvertiser.Advertise">
-
-
-<android.support.v7.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:clickable="true"
-    android:background="@color/backgrounddetails"
-   >
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="horizontal"
-        android:animationCache="true"
-        android:background="@color/backgrounddetails"/>
-
+    tools:context="com.example.orbannorbert.caradvertiser.advertisements.Advertise">
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgrounddetails"
         android:orientation="vertical"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/model"
+        android:clickable="true"
+        android:background="@color/backgrounddetails">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Model:"
-            android:textColor="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/type"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Type:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/year"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Year:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/km"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Km:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/fueltype"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Fuel Type:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/engine"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Engine:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/horsepower"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Horse Power:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/bodytype"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Body Type:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/numberofdors"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Number Of Dors:" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Price" />
-
-        <TextView
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Descripton" />
-
+            android:layout_height="300dp"
+            android:orientation="horizontal"
+            android:animationCache="true"
+            android:background="@color/backgrounddetails"/>
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/coloruser"
+            android:background="@color/backgrounddetails"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Model:"
+                android:textColor="@color/colorPrimaryDark"/>
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Type:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Year:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/km"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Km:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/fueltype"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Fuel Type:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/engine"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Engine:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/horsepower"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Horse Power:" />
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/bodytype"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Body Type:" />
 
             <TextView
                 android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/name"
+                android:id="@+id/numberofdors"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Name:" />
-
+                android:text="Number Of Dors:" />
             <TextView
                 android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/phonenumber"
+                android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Phone Number:" />
-
+                android:text="Price" />
             <TextView
                 android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/email"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="Email:" />
+                android:layout_height="100dp"
+                android:text="Descripton" />
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/coloruser"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Name:" />
+                <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/phonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Phone Number:" />
+                <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Email:" />
+            </android.support.v7.widget.LinearLayoutCompat>
         </android.support.v7.widget.LinearLayoutCompat>
-
     </android.support.v7.widget.LinearLayoutCompat>
-
-</android.support.v7.widget.LinearLayoutCompat>
-
-
 </FrameLayout>

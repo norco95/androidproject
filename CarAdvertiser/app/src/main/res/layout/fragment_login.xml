@@ -2,28 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.orbannorbert.caradvertiser.Login"
+    tools:context="com.example.orbannorbert.caradvertiser.login.Login"
     android:background="@color/colorAccent">
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal">
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:clickable="true"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="User name"
                 android:textColor="#FFF"
                 android:textStyle="bold" />
-
             <EditText
                 android:id="@+id/user_name"
                 android:layout_width="450dp"
@@ -31,14 +27,12 @@
                 android:background="#babfc6"
                 android:inputType="textCapSentences|textAutoCorrect"
                 android:textColor="#111111" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="Password"
                 android:textColor="#FFF"
                 android:textStyle="bold" />
-
             <EditText
                 android:id="@+id/password"
                 android:layout_width="450dp"
@@ -46,19 +40,16 @@
                 android:background="#babfc6"
                 android:inputType="textPassword"
                 android:textColor="#111111" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
-
                 <Button
                     android:id="@+id/login"
                     android:layout_width="100dp"
                     android:layout_height="60dp"
                     android:text="Login" />
-
                 <Button
                     android:id="@+id/cancel"
                     android:layout_width="100dp"
@@ -67,6 +58,4 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-
-
 </FrameLayout>

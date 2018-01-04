@@ -4,28 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.orbannorbert.caradvertiser.Advertises"
+    tools:context="com.example.orbannorbert.caradvertiser.advertisements.Advertises"
     android:clickable="true">
-
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:clickable="true"
-        >
-
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/card_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="vertical"
-                    android:background="@color/colorPrimaryDark">
-                </android.support.v7.widget.RecyclerView>
-
-            </android.support.v7.widget.LinearLayoutCompat>
-
-
-
+        android:clickable="true">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/card_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:background="@color/colorPrimaryDark">
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.LinearLayoutCompat>
 </FrameLayout>

@@ -1,6 +1,5 @@
 package com.example.orbannorbert.caradvertiser;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,10 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.orbannorbert.caradvertiser.advertisements.AddAdvertisement;
+import com.example.orbannorbert.caradvertiser.advertisements.Advertise;
+import com.example.orbannorbert.caradvertiser.advertisements.Advertises;
+import com.example.orbannorbert.caradvertiser.advertisements.MyAdvertises;
+import com.example.orbannorbert.caradvertiser.login.Login;
+import com.example.orbannorbert.caradvertiser.login.Profile;
+import com.example.orbannorbert.caradvertiser.login.Register;
 
+/**
+ * This is the main activity where the navigation is handled.
+ * Here is handled the menu.
+ * Menu buttons are visible/invisible if the user is login/logout.
+ */
 public class MainActivity extends AppCompatActivity implements Communicator{
 
-    private FragmentManager fm=getSupportFragmentManager();
+    private FragmentManager fm = getSupportFragmentManager();
     private String loginId;
     Button addadvertise;
     Button advertisesButton;
@@ -24,20 +35,15 @@ public class MainActivity extends AppCompatActivity implements Communicator{
 
     @Override
     public void respond(String text) {
-
-
         FragmentTransaction ft=fm.beginTransaction();
         Advertise add=new Advertise();
         add.updateText(text);
         ft.replace(R.id.fragmentplace,add);
         ft.commit();
-
-
     }
 
     @Override
-    public void respond2(String text)
-    {
+    public void respond2(String text) {
         loginId=text;
         setMenu();
     }
@@ -46,17 +52,17 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         return loginId;
     }
 
+    /**
+     * Communication between fragments.
+     * @param text
+     */
     @Override
     public void respond1(String text) {
-
-
-        FragmentTransaction ft=fm.beginTransaction();
-        AddAdvertisement add=new AddAdvertisement();
+        FragmentTransaction ft = fm.beginTransaction();
+        AddAdvertisement add = new AddAdvertisement();
         add.updateText(text);
         ft.replace(R.id.fragmentplace,add);
         ft.commit();
-
-
     }
 
     @Override
@@ -72,39 +78,29 @@ public class MainActivity extends AppCompatActivity implements Communicator{
 
         myAdvertises=(Button)findViewById(R.id.myAdvertises);
         myAdvertises.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
 
         myAdvertises.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
 
         profile=(Button)findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-
                     changeFragment(v);
-
             }
         });
 
         logout=(Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-
                 loginId=null;
                 setMenu();
-
             }
         });
 
@@ -116,47 +112,38 @@ public class MainActivity extends AppCompatActivity implements Communicator{
 
         loginButton = (Button) findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
 
         advertisesButton = (Button) findViewById(R.id.advertises);
         advertisesButton.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
 
         addadvertise=(Button)findViewById(R.id.add);
         addadvertise.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
         register=(Button)findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 changeFragment(v);
-
             }
         });
         setMenu();
-
-
     }
 
-    private void setMenu()
-    {
-        if(loginId!=null)
-        {
+    /**
+     * Depending on the user is login or not, different buttons are shown.
+     */
+    private void setMenu() {
+        if(loginId!=null) {
             loginButton.setVisibility(View.GONE);
             addadvertise.setVisibility(View.VISIBLE);
             myAdvertises.setVisibility(View.VISIBLE);
@@ -164,8 +151,7 @@ public class MainActivity extends AppCompatActivity implements Communicator{
             logout.setVisibility(View.VISIBLE);
             register.setVisibility(View.GONE);
         }
-        else
-        {
+        else {
             register.setVisibility(View.VISIBLE);
             loginButton.setVisibility(View.VISIBLE);
             myAdvertises.setVisibility(View.GONE);
@@ -175,31 +161,30 @@ public class MainActivity extends AppCompatActivity implements Communicator{
         }
     }
 
-    public void changeFragment(View view)
-    {
-
+    /**
+     * Changing the fragment corresponding to certain button.
+     * @param view It says which button was pressed.
+     */
+    public void changeFragment(View view) {
         Fragment fragment;
 
-        View f= findViewById(R.id.fragmentplace);
+        View f = findViewById(R.id.fragmentplace);
 
-        if(view==findViewById(R.id.login))
-        {
+        if(view==findViewById(R.id.login)) {
             fragment = new Login();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,fragment);
             ft.commit();
         }
-        if(view==findViewById(R.id.advertises))
-        {
+        if(view==findViewById(R.id.advertises)) {
             fragment = new Advertises();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,fragment);
             ft.commit();
         }
-        if(view==findViewById(R.id.add))
-        {
+        if(view==findViewById(R.id.add)) {
             fragment = new AddAdvertisement();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
@@ -207,8 +192,7 @@ public class MainActivity extends AppCompatActivity implements Communicator{
             ft.commit();
         }
 
-        if(view==findViewById(R.id.myAdvertises))
-        {
+        if(view==findViewById(R.id.myAdvertises)) {
             MyAdvertises my = new MyAdvertises();
             my.setLoginId(loginId);
             FragmentManager fm=getSupportFragmentManager();
@@ -216,27 +200,20 @@ public class MainActivity extends AppCompatActivity implements Communicator{
             ft.replace(R.id.fragmentplace,my);
             ft.commit();
         }
-        if(view==findViewById(R.id.register))
-        {
+        if(view==findViewById(R.id.register)) {
             Register my = new Register();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,my);
             ft.commit();
         }
-        if(view==findViewById(R.id.profile))
-        {
+        if(view==findViewById(R.id.profile)) {
             Profile my = new Profile();
             FragmentManager fm=getSupportFragmentManager();
             FragmentTransaction ft=fm.beginTransaction();
             ft.replace(R.id.fragmentplace,my);
             ft.commit();
         }
-
         setMenu();
-
     }
-
-
-
 }

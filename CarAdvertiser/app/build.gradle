@@ -39,9 +39,7 @@ dependencies {
     //noinspection GradleCompatible
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile 'com.android.support:support-annotations:+'
-//noinspection GradleCompatible
+    //noinspection GradleCompatible
     compile 'com.android.support:design:23.0.1'
-
-
 }
 apply plugin: 'com.google.gms.google-services'

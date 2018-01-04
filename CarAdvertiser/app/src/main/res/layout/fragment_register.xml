@@ -2,33 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.orbannorbert.caradvertiser.Register">
-
-
+    tools:context="com.example.orbannorbert.caradvertiser.login.Register">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         android:clickable="true">
-
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="User name"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/user_name"
                     android:layout_width="450dp"
@@ -36,14 +30,12 @@
                     android:background="#babfc6"
                     android:inputType="textCapSentences|textAutoCorrect"
                     android:textColor="#111111" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="First name"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/first_name"
                     android:layout_width="450dp"
@@ -51,14 +43,12 @@
                     android:background="#babfc6"
                     android:inputType="textCapSentences|textAutoCorrect"
                     android:textColor="#111111" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Last name"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/last_name"
                     android:layout_width="450dp"
@@ -66,14 +56,12 @@
                     android:background="#babfc6"
                     android:inputType="textCapSentences|textAutoCorrect"
                     android:textColor="#111111" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Email"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="450dp"
@@ -81,14 +69,12 @@
                     android:background="#babfc6"
                     android:inputType="textCapSentences|textAutoCorrect"
                     android:textColor="#111111" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Phone number"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/phone_number"
                     android:layout_width="450dp"
@@ -96,14 +82,12 @@
                     android:background="#babfc6"
                     android:inputType="textCapSentences|textAutoCorrect"
                     android:textColor="#111111" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="Password"
                     android:textColor="#FFF"
                     android:textStyle="bold" />
-
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="450dp"
@@ -112,19 +96,16 @@
                     android:inputType="textPassword"
                     android:textColor="#111111" />
             </android.support.v7.widget.LinearLayoutCompat>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
-
                 <Button
                     android:id="@+id/register"
                     android:layout_width="100dp"
                     android:layout_height="60dp"
                     android:text="Register" />
-
                 <Button
                     android:id="@+id/cancel"
                     android:layout_width="100dp"
@@ -132,9 +113,5 @@
                     android:text="Cancel" />
             </LinearLayout>
         </android.support.v7.widget.LinearLayoutCompat>
-
     </RelativeLayout>
-
-
-
 </FrameLayout>
